@@ -23,20 +23,20 @@ $modx->load->controller('account/controller/login', $config);
 
 <p><b>AJAX</b></p>
 ```js
-        $.ajax({
-            url: 'ajax?route=account/controller/login/ajax',
-            dataType: 'json',
-            type: 'post',
-            data: params,
-            success: function(json) {
-	    
-	    	// ваш код
-		
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-            }
-        });
+$.ajax({
+    url: 'ajax?route=account/controller/login/ajax',
+    dataType: 'json',
+    type: 'post',
+    data: params,
+    success: function(json) {
+
+	// ваш код
+
+    },
+    error: function(xhr, ajaxOptions, thrownError) {
+	alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+    }
+});
 ```
 
 <p>Сниппеты должны придерживаться правил</p>
@@ -52,6 +52,7 @@ class ControllerAccountControllerLogin extends Loader {
 		// ваш код
 		
 	}
+	
 }
 ?>
 ```
