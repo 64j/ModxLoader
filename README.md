@@ -42,7 +42,7 @@ $.ajax({
 
 <br>
 <p><b>PHP</b></p>
-<p>Сниппеты должны придерживаться правил</p>
+<p>Сниппеты должны придерживаться правил и находится в папке 'assets/snippets/'</p>
 <p>ControllerAccountControllerLogin - Controller + 'account/controller/login'</p>
 
 ```php
