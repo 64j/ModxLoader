@@ -22,34 +22,36 @@ $modx->load->controller('account/controller/login', $config);
 </p>
 
 <p><b>AJAX</b></p>
-<pre>
+```js
         $.ajax({
             url: 'ajax?route=account/controller/login/ajax',
             dataType: 'json',
             type: 'post',
             data: params,
             success: function(json) {
-            
-                .......
-                
+	    
+	    	// ваш код
+		
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
             }
         });
-</pre>
+```
 
 <p>Сниппеты должны придерживаться правил</p>
 
 <p>ControllerAccountControllerLogin - Controller + 'account/controller/login'</p>
-<pre>
+
+```php
+<?php
 class ControllerAccountControllerLogin extends Loader {
 
 	public function index() {
 	
-  		.....
-  
+		// ваш код
+		
 	}
-  
 }
-</pre>
+?>
+```
