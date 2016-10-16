@@ -56,3 +56,8 @@ class ControllerAccountControllerLogin extends Loader {
 }
 ?>
 ```
+Рабочий код можно посмотреть в сниппете ModxAccount
+
+PHP https://github.com/64j/ModxAccount/blob/master/account/controller/login.php
+
+JS ajax - https://github.com/64j/ModxAccount/blob/master/account/view/login.tpl#L57
