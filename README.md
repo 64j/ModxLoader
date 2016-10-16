@@ -21,6 +21,7 @@ $modx->load->controller('account/controller/login', $config);
 <p><b>$config</b> - массив с передаваемыми параметрами
 </p>
 
+<br>
 <p><b>AJAX</b></p>
 ```js
 $.ajax({
@@ -39,8 +40,9 @@ $.ajax({
 });
 ```
 
+<br>
+<p><b>PHP</b></p>
 <p>Сниппеты должны придерживаться правил</p>
-
 <p>ControllerAccountControllerLogin - Controller + 'account/controller/login'</p>
 
 ```php
@@ -56,6 +58,7 @@ class ControllerAccountControllerLogin extends Loader {
 }
 ?>
 ```
+<br>
 Рабочий код можно посмотреть в сниппете ModxAccount
 
 PHP https://github.com/64j/ModxAccount/blob/master/account/controller/login.php
