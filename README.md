@@ -14,7 +14,7 @@ $modx->load->controller('account/controller/login', $config);
 <b>'account/controller/login'</b> - путь до нужного сниппета
 </p>
 <p>
-<p>$config</b> - массив с передаваемыми параметрами
+<p><b>$config</b> - массив с передаваемыми параметрами
 </p>
 
 <p><b>AJAX</b></p>
@@ -36,18 +36,16 @@ $modx->load->controller('account/controller/login', $config);
 </pre>
 
 <p>Сниппеты должны придерживаться правил</p>
-<pre>
-<code>
-<?php
 
-class ControllerAccountControllerRegister extends Loader {
+<p>ControllerAccountControllerLogin - Controller + 'account/controller/login'</p>
+<pre>
+class ControllerAccountControllerLogin extends Loader {
 
 	public function index() {
+	
+  		.....
   
-  
-  }
+	}
   
 }
-?>
-</code>
 </pre>
