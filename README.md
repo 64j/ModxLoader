@@ -71,13 +71,8 @@ JS ajax - https://github.com/64j/ModxAccount/blob/master/account/view/login.tpl#
 <p>Также можно установить плагин без инклюда, описанного выше. <br>
 События плагина <b>OnWebPageInit</b> и <b>OnPageNotFound</b></p>
 ```php
-<?php
 
 // OnWebPageInit OnPageNotFound
-
-if(!defined('MODX_BASE_PATH')) {
-	die('Unauthorized access.');
-}
 
 $modx->load = new Loader($modx);
 
