@@ -3,6 +3,10 @@
 <h4>Плагин с классом Loader</h4>
 
 <p>Плагин позволяет обращаться к сниппетам как через ajax так и напрямую</p>
+<p>Для установки нужно создать плагин Loader с ниже указанным кодом и на события OnWebPageInit и OnPageNotFound</p>
+<pre>
+require MODX_BASE_PATH.'assets/plugins/loader/plugin.loader.php';
+</pre>
 
 <p>
 пример
