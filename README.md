@@ -9,7 +9,7 @@ require MODX_BASE_PATH.'assets/plugins/loader/plugin.loader.php';
 </pre>
 
 <p>
-пример
+пример вызова своего сниппета в php
 </p>
 <pre>
 $modx->load->controller('account/controller/login', $config);
