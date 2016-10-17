@@ -43,7 +43,7 @@ class Loader {
 			return false;
 		}
 		if($method == 'index' && isset($_REQUEST['route'])) {
-			die('Unauthorized access.');
+			$this->modx->sendRedirect($this->modx->config['site_url']);
 		}
 		$output = '';
 		if(class_exists($class)) {
@@ -56,7 +56,11 @@ class Loader {
 					$controller,
 					$method
 				), $data);
+			} else {
+				$this->modx->sendRedirect($this->modx->config['site_url']);
 			}
+		} else {
+			$this->modx->sendRedirect($this->modx->config['site_url']);
 		}
 		return $output;
 	}
