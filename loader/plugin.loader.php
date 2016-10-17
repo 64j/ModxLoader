@@ -25,7 +25,7 @@ class Loader {
 	}
 
 	public function controller($route, $data = array()) {
-		$parts = explode('/', str_replace('../', '', (string) $route));
+		$parts = explode('/', ltrim((string) $route, './'));
 		while($parts) {
 			$file = MODX_BASE_PATH . 'assets/snippets/' . implode('/', $parts) . '.php';
 			$class = 'Controller' . preg_replace('/[^a-zA-Z0-9]/', '', implode('/', $parts));
