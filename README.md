@@ -160,7 +160,7 @@ if($modx->Event->name == 'OnPageNotFound') {
 <br>
 <br>
 <p>Вместо плагина на событие <b>OnPageNotFound</b> можно использовать <a href="http://modx.im/blog/triks/2103.html" target="_blank">Ajax метод 4</a> от <a href="https://github.com/AgelxNash" target="_blank">Agel_Nash</a></p>
-<p><b>ajax.php</b></p>
+<h4 id="ajax_method_4"><b>ajax.php</b></h4>
 ```php
 <?php
 
