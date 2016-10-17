@@ -153,3 +153,33 @@ if($modx->Event->name == 'OnPageNotFound') {
 	}
 }
 ```
+<br>
+<br>
+<p>Вместо плагина на событие <b>OnPageNotFound</b> можно использовать <a href="http://modx.im/blog/triks/2103.html" target="_blank">Ajax метод 4</a> от <a href="https://github.com/AgelxNash" target="_blank">Agel_Nash</a></p>
+
+```php
+<?php
+
+define('MODX_API_MODE', true);
+
+include_once(dirname(__FILE__) . "/index.php");
+
+$modx->db->connect();
+
+if (empty ($modx->config)) {
+    $modx->getSettings();
+}
+
+$modx->invokeEvent("OnWebPageInit");
+
+if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || (strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') || $_SERVER['REQUEST_METHOD'] != 'POST'){
+	$modx->sendRedirect($modx->config['site_url']);
+}
+
+$json = array();
+
+$json = $modx->load->controller($_REQUEST['route'], $_REQUEST);
+
+header('content-type: application/json');
+echo json_encode($json);
+```
