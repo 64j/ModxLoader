@@ -75,8 +75,6 @@ JS ajax - https://github.com/64j/ModxAccount/blob/master/account/view/login.tpl#
 
 // OnWebPageInit OnPageNotFound
 
-$modx->load = new Loader($modx);
-
 class Loader {
 	private $registry;
 	private $data = array();
@@ -94,7 +92,7 @@ class Loader {
 	}
 
 	public function controller($route, $data = array()) {
-		$parts = explode('/', str_replace('../', '', (string) $route));
+		$parts = explode('/', ltrim((string) $route, './'));
 		while($parts) {
 			$file = MODX_BASE_PATH . 'assets/snippets/' . implode('/', $parts) . '.php';
 			$class = 'Controller' . preg_replace('/[^a-zA-Z0-9]/', '', implode('/', $parts));
@@ -112,7 +110,7 @@ class Loader {
 			return false;
 		}
 		if($method == 'index' && isset($_REQUEST['route'])) {
-			die('Unauthorized access.');
+			$this->modx->sendRedirect($this->modx->config['site_url']);
 		}
 		$output = '';
 		if(class_exists($class)) {
@@ -125,7 +123,11 @@ class Loader {
 					$controller,
 					$method
 				), $data);
+			} else {
+				$this->modx->sendRedirect($this->modx->config['site_url']);
 			}
+		} else {
+			$this->modx->sendRedirect($this->modx->config['site_url']);
 		}
 		return $output;
 	}
@@ -145,6 +147,8 @@ class Loader {
 		return $output;
 	}
 }
+
+$modx->load = new Loader($modx);
 
 if($modx->Event->name == 'OnPageNotFound') {
 	if($_REQUEST['q'] == 'ajax' && isset($_REQUEST['route'])) {
