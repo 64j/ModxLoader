@@ -190,11 +190,7 @@ if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || (strtolower($_SERVER['HTTP_X_REQ
     $modx->sendRedirect($modx->config['site_url']);
 }
 
-$json = array();
-
-$json = $modx->load->controller($_REQUEST['route'], $_REQUEST);
-
 header('content-type: application/json');
 
-echo json_encode($json);
+echo $modx->load->controller($_REQUEST['route'], $_REQUEST);
 ```
