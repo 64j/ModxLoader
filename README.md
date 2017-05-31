@@ -22,7 +22,8 @@ $modx->load->controller('account/controller/login', $config);
 </p>
 
 <br>
-##AJAX
+
+### AJAX
 
 ```js
 $.ajax({
