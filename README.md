@@ -23,6 +23,7 @@ $modx->load->controller('account/controller/login', $config);
 
 <br>
 <p><b>AJAX</b></p>
+
 ```js
 $.ajax({
     url: 'ajax?route=account/controller/login/ajax',
@@ -58,7 +59,9 @@ class AccountControllerLogin {
 }
 ?>
 ```
+
 Или как расширение класса Loader либо любого другого
+
 ```php
 <?php
 class AccountControllerLogin extends Loader {
@@ -72,6 +75,7 @@ class AccountControllerLogin extends Loader {
 }
 ?>
 ```
+
 <br>
 Рабочий код можно посмотреть в сниппете ModxAccount
 
@@ -85,6 +89,7 @@ JS ajax - https://github.com/64j/ModxAccount/blob/master/account/view/login.tpl#
 <p>Также можно установить плагин без инклюда, описанного выше. </p>
 <h4 id="install_modxLoader">Установка:</h4>
 <p>Событие плагина <b>OnWebPageInit</b></p>
+
 ```php
 <?php
 // OnWebPageInit
@@ -166,11 +171,14 @@ if($modx->Event->name == 'OnWebPageInit') {
 
 	$modx->load = new Loader($modx);
 }
+
 ```
+
 <br>
 <br>
 <p>Для работы через ajax можно использовать <a href="http://modx.im/blog/triks/2103.html" target="_blank">Ajax метод 4</a> от <a href="https://github.com/AgelxNash" target="_blank">Agel_Nash</a></p>
 <h4 id="ajax_method_4"><b>ajax.php</b> (создать файл в корне сайта)</h4>
+
 ```php
 <?php
 
